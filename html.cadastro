@@ -18,132 +18,69 @@
 
         <h1>Agiliza</h1>
 
-        <p class="subtitle">
-            Sistema de Gestão Acadêmica
-        </p>
+        <p class="subtitle"> Sistema de Gestão Acadêmica </p>
 
     </header>
 
-
-    <div class="flash-messages" id="flash-cadastro"></div>
-
+    <div> class="flash-messages" id="flash-cadastro" </div>
 
     <div class="cards-wrapper">
 
         <div class="card">
 
-            <h2>Criar conta</h2>
+            <h2> Criar conta </h2>
 
-            <form
-                id="form-registrar"
-                onsubmit="return aoRegistrarConta(event)"
-            >
+            <form id="form-registrar" onsubmit="return aoRegistrarConta(event)">
 
                 <div class="form-group">
 
-                    <label for="nome">
-                        Nome completo
-                    </label>
+                    <label for="nome"> Nome completo </label>
 
-                    <input
-                        type="text"
-                        id="nome"
-                        placeholder="Ex: João Silva"
-                        required
-                    >
+                    <input type="text" id="nome" placeholder="Ex: João Silva" required>
 
                 </div>
 
-
                 <div class="form-group">
 
-                    <label for="email">
-                        E-mail
-                    </label>
+                    <label for="email"> E-mail </label>
 
-                    <input
-                        type="email"
-                        id="email"
-                        placeholder="nome@dominio.com"
-                        required
-                    >
+                    <input type="email" id="email" placeholder="nome@dominio.com" required>
 
                 </div>
 
-
                 <div class="form-group">
 
-                    <label for="senha">
-                        Senha
-                    </label>
+                    <label for="senha"> Senha </label>
 
-                    <input
-                        type="password"
-                        id="senha"
-                        placeholder="Mínimo 6 caracteres"
-                        minlength="6"
-                        required
-                    >
+                    <input type="password" id="senha" placeholder="Mínimo 6 caracteres" minlength="6" required >
 
                 </div>
 
-
                 <div class="form-group">
 
-                    <label for="tipo">
-                        Tipo de usuário
-                    </label>
+                    <label for="tipo"> Tipo de usuário </label>
 
-                    <select
-                        id="tipo"
-                        onchange="alternarCampoTurma(
-                            'grupo-turma-cadastro',
-                            'turma-cadastro',
-                            this.value
-                        )"
-                        required
-                    >
+                    <select id="tipo" onchange="alternarCampoTurma('grupo-turma-cadastro','turma-cadastro',this.value)"required>
 
-                        <option value="">
-                            Selecione...
-                        </option>
+                        <option value="selecione"> Selecione... </option>
 
-                        <option value="aluno">
-                            Aluno
-                        </option>
+                        <option value="aluno"> Aluno </option>
 
-                        <option value="professor">
-                            Professor
-                        </option>
+                        <option value="professor"> Professor </option>
                     </select>
                 </div>
 
+                <div class="form-group" id="grupo-turma-cadastro" style="display:none;">
 
-                <div
-                    class="form-group"
-                    id="grupo-turma-cadastro"
-                    style="display:none;"
-                >
-
-                    <label for="turma-cadastro">
-                        Turma
-                    </label>
+                    <label for="turma-cadastro"> Turma </label>
 
                     <select id="turma-cadastro">
 
-                        <option value="">
-                            Selecione a turma...
-                        </option>
+                        <option value="selecionar turma"> Selecione a turma... </option>
                     </select>
                 </div>
 
-
-                <button
-                    type="submit"
-                    class="btn btn-primary"
-                >
-                    Cadastrar
-                </button>
+                <button type="submit" class="btn btn-primary"> Cadastrar </button>
             </form>
         </div>
 
@@ -151,82 +88,46 @@
 
             <h2>Entrar</h2>
 
-            <form
-                id="form-login"
-                onsubmit="return aoFazerLogin(event)"
-            >
+            <form id="form-login" onsubmit="return aoFazerLogin(event)">
 
                 <div class="form-group">
 
-                    <label for="email_login">
-                        E-mail
-                    </label>
+                    <label for="email_login" E-mail </label>
 
-                    <input
-                        type="email"
-                        id="email_login"
-                        placeholder="nome@dominio.com"
-                        required
-                    >
+                    <input type="email" id="email_login" placeholder="nome@dominio.com" required>
 
                 </div>
 
-
                 <div class="form-group">
 
-                    <label for="senha_login">
-                        Senha
-                    </label>
+                    <label for="senha_login"> Senha </label>
 
-                    <input
-                        type="password"
-                        id="senha_login"
-                        placeholder="Sua senha"
-                        required
-                    >
+                    <input type="password" id="senha_login" placeholder="Sua senha" required> 
+
                 </div>
 
-
                 <div class="form-group">
 
-                    <label for="tipo_login">
-                        Tipo de usuário
-                    </label>
+                    <label for="tipo_login"> Tipo de usuário </label>
 
-                    <select
-                        id="tipo_login"
-                        required
-                    >
+                    <select id="tipo_login" required>
 
-                        <option value="">
-                            Selecione...
-                        </option>
+                        <option value="selecione"> Selecione... </option>
 
-                        <option value="aluno">
-                            Aluno
-                        </option>
+                        <option value="aluno"> Aluno </option>
 
-                        <option value="professor">
-                            Professor
-                        </option>
+                        <option value="professor"> Professor </option>
                     </select>
                 </div>
 
-                <button
-                    type="submit"
-                    class="btn btn-secondary"
-                >
-                    Entrar
-                </button>
+                <button type="submit" class="btn btn-secondary"> Entrar </button>
             </form>
         </div>
     </div>
 
     <footer class="footer">
 
-        <p>
-            Sistema Escolar
-        </p>
+        <p> Sistema Escolar </p>
     </footer>
 </div>
 
