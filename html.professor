@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Agiliza | Área do Professor</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <header class="header header-professor">
+
+        <div class="header-content">
+
+            <div>
+
+                <h1>
+                    Área do Professor
+                </h1>
+
+                <p class="subtitulo-painel">
+                    Secretaria Digital
+                </p>
+            </div>
+
+
+            <a
+                href="index.html"
+                class="btn btn-logout"
+                onclick="aoSair(event)"
+            >
+                Sair
+            </a>
+
+        </div>
+
+    </header>
+
+    <div
+        class="flash-messages"
+        id="flash-professor"
+    ></div>
+
+    <main class="dashboard">
+
+        <div class="welcome-card">
+
+            <h2>
+
+                Olá, Professor(a)
+
+                <span id="professor-nome"></span>
+
+            </h2>
+
+            <p
+                class="info-email"
+                id="professor-email"
+            ></p>
+
+            <p class="info-role">
+
+                Acesso de
+
+                <strong>
+                    Professor
+                </strong>
+            </p>
+        </div>
+
+        <div class="stats-row">
+
+            <div class="stat-card">
+
+                <span
+                    class="stat-number"
+                    id="professor-total-alunos"
+                >
+                    0
+                </span>
+
+                <span class="stat-label">
+                    Alunos cadastrados
+                </span>
+            </div>
+
+
+            <div class="stat-card">
+
+                <span
+                    class="stat-number"
+                    id="professor-turmas-ativas"
+                >
+                    0
+                </span>
+
+                <span class="stat-label">
+                    Turmas ativas
+                </span>
+            </div>
+
+
+            <div class="stat-card">
+
+                <span class="stat-number">
+                    12
+                </span>
+
+                <span class="stat-label">
+                    Atividades pendentes
+                </span>
+
+            </div>
+        </div>
+
+        <div class="cards-wrapper">
+
+            <div class="card">
+
+                <h2>
+                    Cadastrar aluno
+                </h2>
+
+                <p class="card-descricao">
+                    Cadastre um aluno informando sua turma.
+                </p>
+
+                <form
+                    id="form-cadastrar-aluno"
+                    onsubmit="return aoCadastrarAluno(event)"
+                >
+
+                    <div class="form-group">
+
+                        <label for="novo-aluno-nome">
+                            Nome completo
+                        </label>
+
+                        <input
+                            type="text"
+                            id="novo-aluno-nome"
+                            placeholder="Ex: Ana Laura"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="novo-aluno-email">
+                            E-mail
+                        </label>
+
+                        <input
+                            type="email"
+                            id="novo-aluno-email"
+                            placeholder="aluno@dominio.com"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="novo-aluno-senha">
+                            Senha de acesso
+                        </label>
+
+                        <input
+                            type="password"
+                            id="novo-aluno-senha"
+                            placeholder="Mínimo 6 caracteres"
+                            minlength="6"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="novo-aluno-turma">
+                            Turma
+                        </label>
+
+                        <select
+                            id="novo-aluno-turma"
+                            required
+                        >
+
+                            <option value="">
+                                Selecione a turma...
+                            </option>
+                        </select>
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                    >
+                        Cadastrar aluno
+                    </button>
+
+                </form>
+
+            </div>
+
+            <div class="card">
+
+                <h2>  Lançar notas  </h2>
+
+                <form
+                    id="form-lancar-nota"
+                    onsubmit="return aoLancarNota(event)"
+                >
+
+                    <div class="form-group">
+
+                        <label for="nota-aluno">
+                            Aluno
+                        </label>
+
+                        <select
+                            id="nota-aluno"
+                            required
+                        >
+
+                            <option value="">
+                                Selecione um aluno...
+                            </option>
+                        </select>
+
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="nota-disciplina">
+                                Disciplina
+                            </label>
+
+                            <input
+                                type="text"
+                                id="nota-disciplina"
+                                placeholder="Ex: Matemática"
+                                list="sugestoes-disciplinas"
+                                required
+                            >
+
+                            <datalist
+                                id="sugestoes-disciplinas"
+                            ></datalist>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="nota-valor"> Nota (0 a 10) </label>
+
+                            <input
+                                type="number"
+                                id="nota-valor"
+                                placeholder="Ex: 8.5"
+                                min="0"
+                                max="10"
+                                step="0.1"
+                                required
+                            >
+
+                        </div>
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="btn btn-secondary"
+                    >
+                        Salvar nota
+                    </button>
+                </form>
+            </div>
+
+            <div class="card">
+
+                <h2> Registrar frequência </h2>
+
+                <p class="card-descricao">
+                    Marque presença ou falta do aluno em uma data específica.
+                </p>
+
+                <form
+                    id="form-registrar-frequencia"
+                    onsubmit="return aoRegistrarFrequencia(event)"
+                >
+
+                    <div class="form-group">
+
+                        <label for="frequencia-aluno"> Aluno </label>
+
+                        <select
+                            id="frequencia-aluno"
+                            required
+                        >
+
+                            <option value=""> Selecione um aluno… </option>
+
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="frequencia-data"> Data </label>
+
+                            <input
+                                type="date"
+                                id="frequencia-data"
+                                required
+                            >
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="frequencia-status"> Situação </label>
+
+                            <select
+                                id="frequencia-status"
+                                required
+                            >
+
+                                <option value=""> Selecione... </option>
+
+                                <option value="presente"> Presente </option>
+
+                                <option value="falta"> Falta </option>
+
+                            </select>
+                        </div>
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="btn btn-secondary"
+                    >
+                        Registrar
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div
+            class="info-card"
+            style="margin-bottom:1.25rem;"
+        >
+
+            <h3> Alunos, notas e frequência </h3>
+
+            <div class="tabela-wrapper">
+
+                <table
+                    class="tabela-alunos"
+                    id="tabela-alunos"
+                >
+
+                    <thead>
+
+                        <tr>
+
+                            <th> Aluno </th>
+
+                            <th> E-mail </th>
+
+                            <th> Turma </th>
+
+                            <th> Notas lançadas </th>
+
+                            <th> Frequência </th>
+
+                        </tr>
+                    </thead>
+
+                    <tbody> id="tabela-alunos-corpo" </tbody>
+                </table>
+
+                <p
+                    class="texto-vazio"
+                    id="tabela-alunos-vazia"
+                    style="display:none;"
+                >
+                    Nenhum aluno cadastrado ainda.
+                </p>
+            </div>
+        </div>
+
+        <div class="cards-grid">
+
+            <div class="info-card">
+
+                <h3> Minhas turmas </h3>
+
+                <ul class="lista-simples">
+
+                    <li> 9º Ano </li>
+
+                    <li> 1ª Série — Ensino Médio </li>
+
+                    <li> 2ª Série — Ensino Médio </li>
+
+                    <li> 3ª Série — Ensino Médio </li>
+
+                </ul>
+            </div>
+
+            <div class="info-card">
+
+                <h3> Avisos </h3>
+
+                <ul class="lista-simples">
+
+                    <li> Reunião pedagógica — 15/08 </li>
+                    <li> Entrega de relatórios — 22/08 </li>
+
+                    <li> Conselho de classe — 05/09 </li>
+
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+
+        <p> Sistema Escolar · Área do Professor </p>
+
+    </footer>
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
