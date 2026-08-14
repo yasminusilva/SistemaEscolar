@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Agiliza | Área do Aluno</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <header class="header header-aluno">
+
+        <div class="header-content">
+
+            <div>
+
+                <h1>
+                    Área do Aluno
+                </h1>
+
+                <p
+                    class="subtitulo-painel"
+                    id="aluno-turma-cabecalho"
+                ></p>
+            </div>
+
+
+            <a
+                href="index.html"
+                class="btn btn-logout"
+                onclick="aoSair(event)"
+            >
+                Sair
+            </a>
+        </div>
+    </header>
+
+    <div
+        class="flash-messages"
+        id="flash-aluno"
+    ></div>
+
+    <main class="dashboard">
+
+        <div class="welcome-card">
+
+            <h2>
+                Olá,
+                <span id="aluno-nome"></span>
+            </h2>
+
+            <p
+                class="info-email"
+                id="aluno-email"
+            ></p>
+
+            <p class="info-role">
+
+                Aluno(a) da turma
+
+                <strong id="aluno-turma-texto">
+                </strong>
+            </p>
+
+        </div>
+
+        <div class="cards-grid">
+
+            <div class="info-card">
+
+                <h3>
+                    Disciplinas com notas lançadas
+                </h3>
+
+                <p>
+                    Disciplinas nas quais você já
+                    possui alguma avaliação registrada.
+                </p>
+
+                <ul
+                    class="lista-simples"
+                    id="aluno-lista-disciplinas"
+                ></ul>
+
+            </div>
+
+            <div class="info-card">
+
+                <h3>
+                    Notas recentes
+                </h3>
+
+                <p>
+                    Lançadas pelo(a) professor(a)
+                    responsável.
+                </p>
+
+                <ul
+                    class="lista-notas"
+                    id="aluno-lista-notas"
+                ></ul>
+            </div>
+
+            <div class="info-card">
+
+                <h3>
+                    Minha frequência
+                </h3>
+
+                <div class="resumo-frequencia">
+
+                    <span
+                        class="percentual"
+                        id="aluno-frequencia-percentual"
+                    >
+                    </span>
+
+                    <span
+                        class="detalhe"
+                        id="aluno-frequencia-detalhe"
+                    >
+                        Nenhum registro ainda
+                    </span>
+                </div>
+
+
+                <ul
+                    class="lista-notas"
+                    id="aluno-lista-frequencia"
+                ></ul>
+            </div>
+
+            <div class="info-card">
+
+                <h3>
+                    Próximas atividades
+                </h3>
+
+                <p>
+                    Fique atento aos prazos.
+                </p>
+
+                <ul class="lista-simples">
+
+                    <li>
+                        Trabalho de Ciência da
+                        Computação — 20/08
+                    </li>
+
+                    <li>
+                        Prova de Matemática — 25/08
+                    </li>
+
+                    <li>
+                        Seminário de Banco de
+                        Dados — 30/08
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </main>
+
+
+    <footer class="footer">
+
+        <p>
+            Sistema Escolar · Área do Aluno
+        </p>
+    </footer>
+</div>
+
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
